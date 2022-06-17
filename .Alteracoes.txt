@@ -1,0 +1,17 @@
+1 - Ganhar vida ao comer fantasmas
+	- Problema na classe GameController, metodo 'checkPacmanEatSomeOneAndOrTimeFruittoDesappear' 
+	- possui um if que chama o metodo 'addlife'
+	- resolvido removendo essa chamada.
+
+
+2 - Movimentacao (fantasma parado)
+	- Blinky
+	- Ele usa os metodos followPacman() e escapePacman() da classe Ghost
+	- Faltava verificar em cada um desses metodos se o pacman esta parado
+	- Resolvido acrescentando essa verificacao. Quando esta parado, chama o metodo moveRandom()
+
+	
+	- Pinky
+	- Tambem faltava a verificacao se o Pacman esta parado
+	- Essa verificacao foi acrescentada no metodo autoDraw() da propria classe.
+	
