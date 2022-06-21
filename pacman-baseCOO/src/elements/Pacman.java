@@ -13,12 +13,24 @@ public class Pacman extends ElementMove  {
     private int numberDotstoEat=0;
     private int numberGhosttoEat=4;
     private long startTimePower=0;
-    
+    private int numberGhostEatenInOneShell = 1;
     
     public Pacman(String imageName) {
         super(imageName);
         this.isMortal = true;
         
+    }
+    
+    public int getNumberGhostEaten() {
+    	return this.numberGhostEatenInOneShell;
+    }
+    
+    public void incrementNumberGhostEaten() {
+    	this.numberGhostEatenInOneShell++;
+    }
+    
+    public void resetNumberGhostEaten() {
+    	this.numberGhostEatenInOneShell = 1;
     }
     
     public int getScore(){

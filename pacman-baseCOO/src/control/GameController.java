@@ -108,8 +108,9 @@ public class GameController {
                     elements.remove(eTemp);
                     if (eTemp instanceof Ghost){
                   	  pacman.minusNumberGhotstoEat();
-                  	  pacman.addScore(200*(4-pacman.getNumberGhosttoEat()));
-                  	  pacman.addRemainingScore(200*(4-pacman.getNumberGhosttoEat()));
+                  	  pacman.addScore(200 * pacman.getNumberGhostEaten());
+                  	  pacman.addRemainingScore(200* pacman.getNumberGhostEaten());
+                  	  pacman.incrementNumberGhostEaten();
                     } 
                     
                     if (eTemp instanceof ElementGivePoint){                     
@@ -120,6 +121,7 @@ public class GameController {
                     	  pacman.minusNumberDotstoEat();
                       }
                       if (eTemp instanceof PowerPellet){
+                    	  pacman.resetNumberGhostEaten();
                     	  for(int k=1;k<=pacman.getNumberGhosttoEat(); k++){
                     		  ((Ghost)elements.get(k)).changeGhosttoBlue("ghostBlue.png");
                     	  }
@@ -130,8 +132,8 @@ public class GameController {
                     }
                 }
                 int remainingScore=pacman.getRemainingScore();
-                if(remainingScore>1000){
-                	//pacman.addLife();
+                if(remainingScore>10000){
+                	pacman.addLife();
                 	pacman.setRemainingScore(remainingScore-1000);
                 }
                 
