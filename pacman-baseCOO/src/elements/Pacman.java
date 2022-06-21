@@ -13,7 +13,7 @@ public class Pacman extends ElementMove  {
     private int numberDotstoEat=0;
     private int numberGhosttoEat=4;
     private long startTimePower=0;
-    private int numberGhostEatenInOneShell = 1;
+    private int ghostPointMultiplier = 2;
     
     public Pacman(String imageName) {
         super(imageName);
@@ -21,16 +21,16 @@ public class Pacman extends ElementMove  {
         
     }
     
-    public int getNumberGhostEaten() {
-    	return this.numberGhostEatenInOneShell;
+    public int getGhostPointMultiplier() {
+    	return this.ghostPointMultiplier;
     }
     
-    public void incrementNumberGhostEaten() {
-    	this.numberGhostEatenInOneShell++;
+    public void incrementGhostPointMultiplier() {
+    	this.ghostPointMultiplier = ghostPointMultiplier * 2;
     }
     
-    public void resetNumberGhostEaten() {
-    	this.numberGhostEatenInOneShell = 1;
+    public void resetGhostPointMultiplier() {
+    	this.ghostPointMultiplier = 2;
     }
     
     public int getScore(){

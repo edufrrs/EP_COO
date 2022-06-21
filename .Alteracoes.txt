@@ -21,7 +21,7 @@
 3- Pontuação ao comer fantasmas
 	- Na classe GameControllet, metodo "checkPacmanEatSomeOneAndOrTimeFruittoDesappear"
 	- Coloquei o addlife novamente e subi a pontuacão para 10.000
-	- Na classe do Pacman criei uma variável "numberGhostEatenInOneShell"
-	  e os métodos "getNumberGhostEaten", "incrementNumberGhostEaten"e "resetNumberGhostEaten"
-	- "getNumberGhostEaten" e "incrementNumberGhostEaten" foram instanciadas quando o Pacman come um fantasma
-	- "resetNumberGhostEaten" foi instanciada quando o Pacman come uma PowerPallet	
+	- Na classe do Pacman criei uma variável 'ghostPointMultiplier'
+	  e os métodos 'getGhostPointMultiplier','incrementGhostPointMultiplier'e 'resetGhostPointMultiplier'
+	- 'getGhostPointMultiplier','incrementGhostPointMultiplier'e foram instanciadas quando o Pacman come um fantasma
+	- 'resetGhostPointMultiplier'foi instanciada quando o Pacman come uma PowerPallet	
