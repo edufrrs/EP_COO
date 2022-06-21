@@ -25,3 +25,5 @@
 	  e os métodos 'getGhostPointMultiplier','incrementGhostPointMultiplier'e 'resetGhostPointMultiplier'
 	- 'getGhostPointMultiplier','incrementGhostPointMultiplier'e foram instanciadas quando o Pacman come um fantasma
 	- 'resetGhostPointMultiplier'foi instanciada quando o Pacman come uma PowerPallet	
+Problema:
+Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os pontos apenas do primeiro fantasma comido.

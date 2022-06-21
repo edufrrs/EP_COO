@@ -108,8 +108,8 @@ public class GameController {
                     elements.remove(eTemp);
                     if (eTemp instanceof Ghost){
                   	  pacman.minusNumberGhotstoEat();
-                  	  pacman.addScore(100 * pacman.getNumberGhosttoEat());
-                  	  pacman.addRemainingScore(100* pacman.getNumberGhosttoEat());
+                  	  pacman.addScore(100 * pacman.getGhostPointMultiplier());
+                  	  pacman.addRemainingScore(100* pacman.getGhostPointMultiplier());
                   	  pacman.incrementGhostPointMultiplier();
                     } 
                     
