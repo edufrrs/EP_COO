@@ -1,5 +1,6 @@
 package control;
 
+import elements.Blacky;
 import elements.Blinky;
 
 import elements.Cherry;
@@ -76,7 +77,6 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
         else {
         	this.stage = new Stage(Main.level);
         	fillInitialElemArrayFromMatrix(stage.getMatrix());
-
         }
     }
     
@@ -85,55 +85,110 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
     }    
     
     private void fillInitialElemArrayFromMatrix(int [][]matrix) {
-	 	pacman = new Pacman("pacman.png");
-        pacman.setPosition(1,1);
-        pacman.addLife();
-        this.addElement(pacman);
+    	
+    	if(Main.level == 1 || Main.level == 2 || Main.level == 3) {
+    		pacman = new Pacman("pacman.png");
+            pacman.setPosition(1,1);
+            pacman.addLife();
+            this.addElement(pacman);
 
-        Blinky blinky=new Blinky("blinky.png");
-        blinky.setPosition (10,8);
-        this.addElement(blinky);
+            Blinky blinky=new Blinky("blinky.png");
+            blinky.setPosition (10,8);
+            this.addElement(blinky);
 
-        Pinky pinky=new Pinky("pinky.png");
-        pinky.setPosition (10,9);
-        this.addElement(pinky);
-        
-        Inky inky=new Inky("inky.png");
-        inky.setPosition (10,10);
-        this.addElement(inky);
-        
-        Clyde clyde=new Clyde("clyde.png");
-        clyde.setPosition (8,9);
-        this.addElement(clyde);
-        
-        
-        for (int i=0;i<Consts.NUM_CELLS; i=i+1){
-        	for(int j=0; j<Consts.NUM_CELLS; j=j+1){
-        		switch (matrix[i][j]) {
-        		case 1:
-        			Wall wall1=new Wall("bricks6.png");
-        			wall1.setPosition (i,j);
-        			this.addElement(wall1);
-        			break;
-                case 0:    
-                    PacDots pacDot=new PacDots("pac-dot.png");
-                    pacDot.setPosition (i,j);
-                    this.addElement(pacDot);
-                    pacman.addNumberDotstoEat();
-                    break;
-                case 6:    
-                    PowerPellet power=new PowerPellet("power_Pellet.png");
-                    power.setPosition (i,j);
-                    this.addElement(power);
-                    break;    
-                default:
-                    break;
-        		}
+            Pinky pinky=new Pinky("pinky.png");
+            pinky.setPosition (10,9);
+            this.addElement(pinky);
+            
+            Inky inky=new Inky("inky.png");
+            inky.setPosition (10,10);
+            this.addElement(inky);
+            
+            Clyde clyde=new Clyde("clyde.png");
+            clyde.setPosition (8,9);
+            this.addElement(clyde);
+            
+            for (int i=0;i<Consts.NUM_CELLS; i=i+1){
+            	for(int j=0; j<Consts.NUM_CELLS; j=j+1){
+            		switch (matrix[i][j]) {
+            		case 1:
+            			Wall wall1=new Wall("bricks6.png");
+            			wall1.setPosition (i,j);
+            			this.addElement(wall1);
+            			break;
+                    case 0:    
+                        PacDots pacDot=new PacDots("pac-dot.png");
+                        pacDot.setPosition (i,j);
+                        this.addElement(pacDot);
+                        pacman.addNumberDotstoEat();
+                        break;
+                    case 6:    
+                        PowerPellet power=new PowerPellet("power_Pellet.png");
+                        power.setPosition (i,j);
+                        this.addElement(power);
+                        break;    
+                    default:
+                        break;
+            		}
+                }
             }
-        }
+    	} else if (Main.level==4) {
+    		pacman = new Pacman("pacman.png");
+    		pacman.setNumberGhosttoEat5();
+            pacman.setPosition(1,1);
+            pacman.addLife();
+            this.addElement(pacman);
 
-		
-	}
+            Blinky blinky=new Blinky("blinky.png");
+            blinky.setPosition (10,8);
+            this.addElement(blinky);
+
+            Pinky pinky=new Pinky("pinky.png");
+            pinky.setPosition (10,9);
+            this.addElement(pinky);
+            
+            Inky inky=new Inky("inky.png");
+            inky.setPosition (10,10);
+            this.addElement(inky);
+            
+            Clyde clyde=new Clyde("clyde.png");
+            clyde.setPosition (8,9);
+            this.addElement(clyde);
+            
+            Blacky blacky=new Blacky("blacky.png");
+            blacky.setPosition (8,10);
+            this.addElement(blacky);
+            
+            
+            for (int i=0;i<Consts.NUM_CELLS; i=i+1){
+            	for(int j=0; j<Consts.NUM_CELLS; j=j+1){
+            		switch (matrix[i][j]) {
+            		case 1:
+            			Wall wall1=new Wall("bricks6.png");
+            			wall1.setPosition (i,j);
+            			this.addElement(wall1);
+            			break;
+                    case 0:    
+                        PacDots pacDot=new PacDots("pac-dot.png");
+                        pacDot.setPosition (i,j);
+                        this.addElement(pacDot);
+                        pacman.addNumberDotstoEat();
+                        break;
+                    case 6:    
+                        PowerPellet power=new PowerPellet("power_Pellet.png");
+                        power.setPosition (i,j);
+                        this.addElement(power);
+                        break;    
+                    default:
+                        break;
+            		}
+                }
+            }
+    	}
+    		
+    	 
+    		
+    }
 
 	private void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException{
 		try {

@@ -99,6 +99,10 @@ public class Pacman extends ElementMove implements Serializable  {
 	public int getNumberGhosttoEat() {
 		return numberGhosttoEat;
 	}
+	
+	public void setNumberGhosttoEat5() {
+		this.numberGhosttoEat = 5;
+	}
 
 
 }

@@ -32,7 +32,12 @@ Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os ponto
 4 - Novo nivel
 	- Criada nova matriz na classe Stage
 	- Adicionado "Level 4" na string da classe InitialScreen
-	- Falta adicionar mais 1 fantasma
+	- Pacman
+		- criado metodo setNumberGhosttoEat5(). Sem ajustar esse atributo estava gerando erro na hora de criar os
+		elementos
+	- Gamescreen, fillInitialElemArrayFromMatrix()
+		- criado um if else que verifica o valor de 'Main.level'. Quando == 4, chama setNumberGhosttoEat5() e 
+		cria a tela com o quinto fantasma
 
 
 5 - Salvamento do jogo
