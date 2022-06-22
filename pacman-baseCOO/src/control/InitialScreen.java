@@ -1,6 +1,7 @@
 package control;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -11,6 +12,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 import utils.Consts;
 
@@ -28,6 +32,46 @@ public class InitialScreen extends javax.swing.JFrame {
 		configureStartButton();
 		configureOpenButton();
 		configureComboBox();
+		configureMenuBar();
+	}
+	
+	
+	private void configureMenuBar() {
+		JMenuBar barraMenu = new JMenuBar(); 
+		this.setJMenuBar(barraMenu);
+		
+		
+		
+		
+		
+		JMenu menuMenu = new JMenu("Menu");
+		barraMenu.add(menuMenu);
+		
+		JMenuItem itemNovo = new JMenuItem("Iniciar novo jogo");
+		menuMenu.add(itemNovo);
+		
+		JMenuItem itemNovo1 = new JMenuItem("Carregar jogo salvo");
+		menuMenu.add(itemNovo1);
+		
+		
+		JMenu menuEstagio = new JMenu("Estágio");
+		barraMenu.add(menuEstagio);
+		
+		JMenuItem itemEstagio1 = new JMenuItem("Estágio 1");
+		menuEstagio.add(itemEstagio1);
+		
+		JMenuItem itemEstagio2 = new JMenuItem("Estágio 2");
+		menuEstagio.add(itemEstagio2);
+		
+		JMenuItem itemEstagio3 = new JMenuItem("Estágio 3");
+		menuEstagio.add(itemEstagio3);
+		
+		JMenuItem itemEstagio4 = new JMenuItem("Estágio 4");
+		menuEstagio.add(itemEstagio4);
+		
+		
+		//JMenuItem itemEstagio = new JMenuItem("Selecionar o estagio");
+		//itemNovo.add(itemEstagio);
 	}
 	
 	private void configureInitialScreen(){
