@@ -27,12 +27,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-public class GameScreen extends javax.swing.JFrame implements KeyListener {
+
+import javax.swing.JOptionPane;
+public class GameScreen extends javax.swing.JFrame implements KeyListener, Serializable {
     
     private Pacman pacman;
     private ArrayList<Element> elemArray;
@@ -132,7 +135,28 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
 
 	private void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException{
 		        /*Apagar o throw e implementar o m√©todo openSavedGame aqui*/
-		        throw new FileNotFoundException();                 
+		try {
+			FileInputStream fluxo = new FileInputStream("jogo.ser");
+			ObjectInputStream objarq = new ObjectInputStream(fluxo);
+			
+			this.stage = (Stage) objarq.readObject();
+			System.out.println(stage.id);
+			this.elemArray = (ArrayList) objarq.readObject();
+			this.pacman = (Pacman) objarq.readObject();
+			System.out.println(pacman.getRemainingScore());
+			
+        	//fillInitialElemArrayFromMatrix(stage.getMatrix());
+        	
+			objarq.close();
+		 }
+		 catch (FileNotFoundException e) {
+			 System.out.println("Arquivo n„o encontrado");
+		 }
+		 catch(IOException ioExc) {
+			 System.out.println(ioExc.getMessage());
+			 ioExc.printStackTrace();
+		 }
+	        throw new FileNotFoundException();                 
     }
 
 	public final void addElement(Element elem) {
@@ -208,13 +232,26 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             pacman.setMovDirection(Pacman.STOP);
         } else if ((e.getKeyCode() == KeyEvent.VK_S) && ((e.getModifiers() & KeyEvent.CTRL_MASK) != 0)) {
-            saveElemArrayandStage(); 
- 
+        	pacman.setMovDirection(Pacman.STOP);
+        	saveElemArrayandStage();
+        	JOptionPane.showMessageDialog(null, "Jogo Salvo");	
         } 
     }
     
     private void saveElemArrayandStage() {
-    	System.out.println("Falta implementar");
+    	try {
+	   		 FileOutputStream fluxo = new FileOutputStream("jogo.ser");
+	   		 ObjectOutputStream objarq = new ObjectOutputStream(fluxo);
+	   		 objarq.writeObject(stage);
+	   		 objarq.writeObject(this.elemArray);
+	   		 objarq.writeObject(pacman);
+	   		 objarq.close();
+   		}
+   		catch(IOException ioExc) {
+   			System.out.println(ioExc.getMessage());
+   			ioExc.printStackTrace();
+   		}
+    	//System.out.println("Falta implementar");
  	}
 
 	/**

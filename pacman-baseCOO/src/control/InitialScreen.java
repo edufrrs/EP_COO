@@ -23,7 +23,7 @@ public class InitialScreen extends javax.swing.JFrame {
 	private JButton startButton;
 	private JButton openButton;
 	private final String nomeImagemInicial = "inicialimagem.png";
-	private static String[] levels = { "Level 1", "Level 2", "Level 3" };
+	private static String[] levels = { "Level 1", "Level 2", "Level 3", "Level 4" };
 	
 	private JComboBox<String> box;
 	

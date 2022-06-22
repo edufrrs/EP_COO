@@ -13,7 +13,7 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 
-public abstract class Ghost extends ElementMove {
+public abstract class Ghost extends ElementMove implements Serializable {
     
     
     public Ghost(String imageName) {
