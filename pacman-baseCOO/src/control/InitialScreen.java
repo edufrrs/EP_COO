@@ -41,16 +41,32 @@ public class InitialScreen extends javax.swing.JFrame {
 		this.setJMenuBar(barraMenu);
 		
 		
-		
-		
-		
 		JMenu menuMenu = new JMenu("Menu");
 		barraMenu.add(menuMenu);
 		
 		JMenuItem itemNovo = new JMenuItem("Iniciar novo jogo");
+		itemNovo.addActionListener(new java.awt.event.ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				Main.initialScreen.setVisible(false);  
+		    	Main.initialScreen.dispose();
+				Main.startGame();
+			}
+			
+		});
 		menuMenu.add(itemNovo);
 		
 		JMenuItem itemNovo1 = new JMenuItem("Carregar jogo salvo");
+		itemNovo1.addActionListener(new java.awt.event.ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				Main.initialScreen.setVisible(false);  
+		    	Main.initialScreen.dispose();
+		    	Main.openSavedGame = true;
+		    	Main.startGame();
+			}
+			
+		});
 		menuMenu.add(itemNovo1);
 		
 		
@@ -58,20 +74,47 @@ public class InitialScreen extends javax.swing.JFrame {
 		barraMenu.add(menuEstagio);
 		
 		JMenuItem itemEstagio1 = new JMenuItem("Estágio 1");
+		itemEstagio1.addActionListener(new java.awt.event.ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				Main.level = 1;
+			}
+			
+		});
 		menuEstagio.add(itemEstagio1);
 		
 		JMenuItem itemEstagio2 = new JMenuItem("Estágio 2");
+		itemEstagio2.addActionListener(new java.awt.event.ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				Main.level = 2;
+			}
+			
+		});
 		menuEstagio.add(itemEstagio2);
 		
 		JMenuItem itemEstagio3 = new JMenuItem("Estágio 3");
+		itemEstagio3.addActionListener(new java.awt.event.ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				Main.level = 3;
+			}
+			
+		});
 		menuEstagio.add(itemEstagio3);
 		
 		JMenuItem itemEstagio4 = new JMenuItem("Estágio 4");
+		itemEstagio4.addActionListener(new java.awt.event.ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				Main.level = 4;
+			}
+			
+		});
 		menuEstagio.add(itemEstagio4);
 		
 		
-		//JMenuItem itemEstagio = new JMenuItem("Selecionar o estagio");
-		//itemNovo.add(itemEstagio);
+		
 	}
 	
 	private void configureInitialScreen(){

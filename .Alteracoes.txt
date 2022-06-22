@@ -44,3 +44,6 @@ Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os ponto
 6 - Menu
 	- Implementada a função configureMenuBar() na 'InitialScreen()'
 	- a função implementa o menu mas ainda preciso configurar pra abrir o jogo
+7- Funcionalidade do Menu
+	- Implementada as funçoes de abrir um novo jogo, carregar um jogo salvo e mudar o estágio
+	- As funcionalidades foram implementadas no ConfigureMenuBar
