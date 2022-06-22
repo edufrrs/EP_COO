@@ -40,3 +40,7 @@ Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os ponto
 	- Corrigido evento Ctrl+S (GameScreen > keyPressed)
 	- openSavedGame() e saveElemArrayandStage()
 		- só fiz merda, pode apagar td
+
+6 - Menu
+	- Implementada a função configureMenuBar() na 'InitialScreen()'
+	- a função implementa o menu mas ainda preciso configurar pra abrir o jogo
