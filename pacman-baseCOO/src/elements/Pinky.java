@@ -6,7 +6,7 @@ import utils.Position;
 import java.awt.Graphics;
 import java.io.Serializable;
 import java.util.Random;
-public class Pinky extends Ghost  {
+public class Pinky extends Ghost implements Serializable  {
      
 	public Pinky(String imageName) {
 	      super(imageName);

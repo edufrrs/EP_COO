@@ -27,3 +27,16 @@
 	- 'resetGhostPointMultiplier'foi instanciada quando o Pacman come uma PowerPallet	
 Problema:
 Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os pontos apenas do primeiro fantasma comido.
+
+
+4 - Novo nivel
+	- Criada nova matriz na classe Stage
+	- Adicionado "Level 4" na string da classe InitialScreen
+	- Falta adicionar mais 1 fantasma
+
+
+5 - Salvamento do jogo
+	- Implementada a interface Serializable em todas as classes do pacote 'elements'
+	- Corrigido evento Ctrl+S (GameScreen > keyPressed)
+	- openSavedGame() e saveElemArrayandStage()
+		- só fiz merda, pode apagar td
