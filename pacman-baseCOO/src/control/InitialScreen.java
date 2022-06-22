@@ -45,28 +45,13 @@ public class InitialScreen extends javax.swing.JFrame {
 		barraMenu.add(menuMenu);
 		
 		JMenuItem itemNovo = new JMenuItem("Iniciar novo jogo");
-		itemNovo.addActionListener(new java.awt.event.ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				Main.initialScreen.setVisible(false);  
-		    	Main.initialScreen.dispose();
-				Main.startGame();
-			}
-			
-		});
+		HandlerStartButton handlerIniciarJogo = new HandlerStartButton();
+		itemNovo.addActionListener(handlerIniciarJogo);
 		menuMenu.add(itemNovo);
 		
 		JMenuItem itemNovo1 = new JMenuItem("Carregar jogo salvo");
-		itemNovo1.addActionListener(new java.awt.event.ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				Main.initialScreen.setVisible(false);  
-		    	Main.initialScreen.dispose();
-		    	Main.openSavedGame = true;
-		    	Main.startGame();
-			}
-			
-		});
+		HandlerOpenButton handlerOpen = new HandlerOpenButton();
+		itemNovo1.addActionListener(handlerOpen);
 		menuMenu.add(itemNovo1);
 		
 		
