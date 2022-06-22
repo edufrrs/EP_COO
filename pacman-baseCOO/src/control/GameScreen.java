@@ -61,8 +61,8 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
         	}
         	catch(FileNotFoundException e1){
         	 		System.err.println("Arquivo jogo.ser não existente. Iniciando novo jogo ...");
-                	this.stage = new Stage(Main.level);
-                	fillInitialElemArrayFromMatrix(stage.getMatrix());
+                	//this.stage = new Stage(Main.level);
+                	//fillInitialElemArrayFromMatrix(stage.getMatrix());
         	}
         	catch(IOException e1){
              		e1.printStackTrace();
