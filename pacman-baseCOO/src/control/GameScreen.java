@@ -86,6 +86,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
     private void fillInitialElemArrayFromMatrix(int [][]matrix) {
 	 	pacman = new Pacman("pacman.png");
         pacman.setPosition(1,1);
+        pacman.addLife();
         this.addElement(pacman);
 
         Blinky blinky=new Blinky("blinky.png");

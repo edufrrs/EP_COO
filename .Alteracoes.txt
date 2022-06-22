@@ -41,9 +41,18 @@ Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os ponto
 	- openSavedGame() e saveElemArrayandStage()
 		- só fiz merda, pode apagar td
 
+
 6 - Menu
 	- Implementada a função configureMenuBar() na 'InitialScreen()'
 	- a função implementa o menu mas ainda preciso configurar pra abrir o jogo
 7- Funcionalidade do Menu
 	- Implementada as funçoes de abrir um novo jogo, carregar um jogo salvo e mudar o estágio
 	- As funcionalidades foram implementadas no ConfigureMenuBar
+
+
+8 - Reset da tela quando morre
+	- GameController, if(overlapGhostPacman)
+		- Chamada que resetava removida
+		- Apos morrer, reposicionando pacman em (1,1)
+	- GameScreen, fillInitialElemArrayFromMatrix()
+		- Para facilitar na hora de testar, coloquei para iniciar com 2 vidas
