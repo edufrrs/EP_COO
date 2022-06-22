@@ -39,7 +39,7 @@ Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os ponto
 	- Implementada a interface Serializable em todas as classes do pacote 'elements'
 	- Corrigido evento Ctrl+S (GameScreen > keyPressed)
 	- openSavedGame() e saveElemArrayandStage()
-		- só fiz merda, pode apagar td
+		- Só precisou salvar em arquivo 'stage', 'pacman' e o array de elementos da classe GameScreen
 
 
 6 - Menu

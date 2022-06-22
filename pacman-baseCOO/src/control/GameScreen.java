@@ -60,9 +60,10 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
         		openSavedGame(fileName);
         	}
         	catch(FileNotFoundException e1){
-        	 		System.err.println("Arquivo jogo.ser n„o existente. Iniciando novo jogo ...");
-                	//this.stage = new Stage(Main.level);
-                	//fillInitialElemArrayFromMatrix(stage.getMatrix());
+        	 		//System.err.println("Arquivo jogo.ser n„o existente. Iniciando novo jogo ...");
+        			JOptionPane.showMessageDialog(null, "Nenhum jogo salvo. Iniciando um novo...");	
+                	this.stage = new Stage(Main.level);
+                	fillInitialElemArrayFromMatrix(stage.getMatrix());
         	}
         	catch(IOException e1){
              		e1.printStackTrace();
@@ -135,29 +136,25 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
 	}
 
 	private void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException{
-		        /*Apagar o throw e implementar o m√©todo openSavedGame aqui*/
 		try {
 			FileInputStream fluxo = new FileInputStream("jogo.ser");
 			ObjectInputStream objarq = new ObjectInputStream(fluxo);
 			
 			this.stage = (Stage) objarq.readObject();
-			System.out.println(stage.id);
+			//System.out.println(stage.id);
 			this.elemArray = (ArrayList) objarq.readObject();
 			this.pacman = (Pacman) objarq.readObject();
-			System.out.println(pacman.getRemainingScore());
-			
-        	//fillInitialElemArrayFromMatrix(stage.getMatrix());
+			//System.out.println(pacman.getRemainingScore());
         	
 			objarq.close();
 		 }
 		 catch (FileNotFoundException e) {
-			 System.out.println("Arquivo n„o encontrado");
+			 throw new FileNotFoundException(); 
 		 }
 		 catch(IOException ioExc) {
 			 System.out.println(ioExc.getMessage());
 			 ioExc.printStackTrace();
-		 }
-	        throw new FileNotFoundException();                 
+		 }                       
     }
 
 	public final void addElement(Element elem) {
