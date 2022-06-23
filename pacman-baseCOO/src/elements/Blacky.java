@@ -24,7 +24,7 @@ public class Blacky extends Ghost implements Serializable {
         }
         else{
         	if(!this.isMortal){
-        		followPacman();
+        		moveRandom();
         	}
         	else{
         		escapePacman();

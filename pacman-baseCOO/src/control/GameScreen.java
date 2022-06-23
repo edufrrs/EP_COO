@@ -220,7 +220,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
         elemArray.remove(elem);
     }
     
-    public void reStartGame(int numberLifes){
+    public void reStartGame(int numberLifes, int numberPoints){
     	elemArray.clear();
     	elemArray = new ArrayList<Element>();
         pacman = null;
@@ -228,6 +228,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
         this.stage = new Stage(Main.level);
     	fillInitialElemArrayFromMatrix(stage.getMatrix());
     	((Pacman)elemArray.get(0)).setNumberLifes(numberLifes);
+    	((Pacman)elemArray.get(0)).addScore(numberPoints);
     }
     
     @Override
