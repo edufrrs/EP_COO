@@ -112,6 +112,14 @@ public class GameController {
                   	  pacman.minusNumberGhotstoEat();
                   	  pacman.addScore(100 * pacman.getGhostPointMultiplier());
                   	  pacman.addRemainingScore(100* pacman.getGhostPointMultiplier());
+                  	  
+                  	  String pontos = String.valueOf(100* pacman.getGhostPointMultiplier());
+                  	  GhostPointsImage Imagem = new GhostPointsImage(pontos+".png");
+                  	
+                  	  Imagem.setStartTime(System.currentTimeMillis());
+                  	  Imagem.setPosition(pacman.getPos().getX(), pacman.getPos().getY());
+                  	  elements.add(Imagem);
+
                   	  pacman.incrementGhostPointMultiplier();
                     } 
                     
@@ -155,11 +163,19 @@ public class GameController {
             			elements.remove(eTemp);
             		}
             	}
-                 	
+            	
+            	if (eTemp instanceof GhostPointsImage) {
+            		long elapsed = System.currentTimeMillis()-((GhostPointsImage)eTemp).getStartTime();
+            		if (elapsed>=5000){
+            				elements.remove(eTemp);
+            		}
+            	}
             }
+                 	
         }
+}
         
-	}
+	
 	private void checkTimetoAppearFruit(ArrayList<Element> elements,  int [][]matrix) {
         
         long elapsedTime = System.currentTimeMillis()-Main.time;

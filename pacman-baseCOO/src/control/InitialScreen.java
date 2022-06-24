@@ -29,8 +29,7 @@ public class InitialScreen extends javax.swing.JFrame {
 	
 	public InitialScreen(){
 		configureInitialScreen();
-		configureStartButton();
-		configureOpenButton();
+		
 		configureComboBox();
 		configureMenuBar();
 	}
@@ -55,10 +54,10 @@ public class InitialScreen extends javax.swing.JFrame {
 		menuMenu.add(itemNovo1);
 		
 		
-		JMenu menuEstagio = new JMenu("Estágio");
+		JMenu menuEstagio = new JMenu("Estï¿½gio");
 		barraMenu.add(menuEstagio);
 		
-		JMenuItem itemEstagio1 = new JMenuItem("Estágio 1");
+		JMenuItem itemEstagio1 = new JMenuItem("Estï¿½gio 1");
 		itemEstagio1.addActionListener(new java.awt.event.ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -68,7 +67,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		});
 		menuEstagio.add(itemEstagio1);
 		
-		JMenuItem itemEstagio2 = new JMenuItem("Estágio 2");
+		JMenuItem itemEstagio2 = new JMenuItem("Estï¿½gio 2");
 		itemEstagio2.addActionListener(new java.awt.event.ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -78,7 +77,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		});
 		menuEstagio.add(itemEstagio2);
 		
-		JMenuItem itemEstagio3 = new JMenuItem("Estágio 3");
+		JMenuItem itemEstagio3 = new JMenuItem("Estï¿½gio 3");
 		itemEstagio3.addActionListener(new java.awt.event.ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -88,7 +87,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		});
 		menuEstagio.add(itemEstagio3);
 		
-		JMenuItem itemEstagio4 = new JMenuItem("Estágio 4");
+		JMenuItem itemEstagio4 = new JMenuItem("Estï¿½gio 4");
 		itemEstagio4.addActionListener(new java.awt.event.ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -122,6 +121,7 @@ public class InitialScreen extends javax.swing.JFrame {
         }	
         //pack();
 	}
+	/**
 	private void configureStartButton(){
 		startButton = new JButton("Novo Jogo");
 		startButton.setSize(150, 50);
@@ -133,10 +133,10 @@ public class InitialScreen extends javax.swing.JFrame {
 		startButton.addActionListener(handlerIniciarJogo);
 		add(startButton);
 	}
-	
+	*/
 	/**
 	 * Configurar botÃ£o de Iniciar Jogo
-	 */
+	 
 	private void configureOpenButton(){
 		startButton = new JButton("Carregar Jogo");
 		startButton.setSize(150, 50);
@@ -148,7 +148,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		startButton.addActionListener(handlerOpen);
 		add(startButton);
 	}
-	
+	*/
 	
 	private void configureComboBox(){
 		box = new JComboBox<String>(levels);
