@@ -61,7 +61,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
         		openSavedGame(fileName);
         	}
         	catch(FileNotFoundException e1){
-        	 		//System.err.println("Arquivo jogo.ser não existente. Iniciando novo jogo ...");
+        	 		//System.err.println("Arquivo jogo.ser nï¿½o existente. Iniciando novo jogo ...");
         			JOptionPane.showMessageDialog(null, "Nenhum jogo salvo. Iniciando um novo...");	
                 	this.stage = new Stage(Main.level);
                 	fillInitialElemArrayFromMatrix(stage.getMatrix());
@@ -220,7 +220,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
         elemArray.remove(elem);
     }
     
-    public void reStartGame(int numberLifes, int numberPoints){
+    public void reStartGame(int numberLifes, int numberPoints, int remainingScore){
     	elemArray.clear();
     	elemArray = new ArrayList<Element>();
         pacman = null;
@@ -229,6 +229,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
     	fillInitialElemArrayFromMatrix(stage.getMatrix());
     	((Pacman)elemArray.get(0)).setNumberLifes(numberLifes);
     	((Pacman)elemArray.get(0)).addScore(numberPoints);
+    	((Pacman)elemArray.get(0)).addRemainingScore(remainingScore);
     }
     
     @Override
