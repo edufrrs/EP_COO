@@ -215,6 +215,10 @@ public class GameController {
         			if(e instanceof Clyde){
         				((Clyde) e).changeGhosttoNormal("clyde.png");
         			}
+        			if(e instanceof Blacky){
+        				((Blacky) e).changeGhosttoNormal("blacky.png");
+        			}
+        			
         			
                 }		
         			

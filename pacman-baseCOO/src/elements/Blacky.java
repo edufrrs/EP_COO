@@ -20,11 +20,12 @@ public class Blacky extends Ghost implements Serializable {
         double distancia=posPacman.distance(this.pos);
         
         if(distancia<Consts.DISTANCEGHOST){
+        	//
         	moveRandom();
         }
         else{
         	if(!this.isMortal){
-        		followPacman();
+        		moveRandom();
         	}
         	else{
         		escapePacman();
