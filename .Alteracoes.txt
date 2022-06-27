@@ -61,10 +61,12 @@ Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os ponto
 		- Apos morrer, reposicionando pacman em (1,1)
 	- GameScreen, fillInitialElemArrayFromMatrix()
 		- Para facilitar na hora de testar, coloquei para iniciar com 2 vidas
+
 9- Pacman quando passava de fase e alcançava 10.000 pontos não ganhava vida
-	-No método restarGame foi incluido um parâmetro pra receber o PointsRemaining(variável que guarda 
+	- No método restarGame foi incluido um parâmetro pra receber o PointsRemaining(variável que guarda 
 		quantos pontos faltam para o pacman ganhar vida)
 	- E no método foi incluido uma linha de comando set que inclui o pointsRemaining da fase anterior na próxima fase
+	- Corrigi um problema que toda vez que passava a fase o número de vidas voltava pra 1, alterei a chamada do restartGame(1,...) pra restarGame(pacman.getLifes() 
 10- Printar na tela o ponto que o fantasma deu quando ele morre
 	-Foi criado uma nova classe GhostPointsImage que extende Element
 	-no método que checa quando um fantasma morre, foi adicionada linhas que criam um objeto do tipo(GhostPointsImage)

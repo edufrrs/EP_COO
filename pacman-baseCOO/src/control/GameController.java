@@ -57,7 +57,7 @@ public class GameController {
         		System.exit(0);
         	}
         	else{
-        		Main.gamePacMan.reStartGame(1, pacman.getScore(), pacman.getRemainingScore());
+        		Main.gamePacMan.reStartGame(pacman.getLifes(), pacman.getScore(), pacman.getRemainingScore());
         	}
         }
         else{

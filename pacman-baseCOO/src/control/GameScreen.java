@@ -230,6 +230,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
     	((Pacman)elemArray.get(0)).setNumberLifes(numberLifes);
     	((Pacman)elemArray.get(0)).addScore(numberPoints);
     	((Pacman)elemArray.get(0)).addRemainingScore(remainingScore);
+    	
     }
     
     @Override

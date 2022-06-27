@@ -44,6 +44,7 @@ public class Pacman extends ElementMove implements Serializable  {
 	public int getLifes() {
 		return this.numberLifes;
 	}
+
 	
 	public int getNumberDotstoEat() {
 		return this.numberDotstoEat;
