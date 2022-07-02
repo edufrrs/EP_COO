@@ -30,7 +30,6 @@ public class InitialScreen extends javax.swing.JFrame {
 	public InitialScreen(){
 		configureInitialScreen();
 		
-		configureComboBox();
 		configureMenuBar();
 	}
 	
@@ -54,51 +53,25 @@ public class InitialScreen extends javax.swing.JFrame {
 		menuMenu.add(itemNovo1);
 		
 		
-		JMenu menuEstagio = new JMenu("Estï¿½gio");
+		JMenu menuEstagio = new JMenu("Estágio");
 		barraMenu.add(menuEstagio);
 		
-		JMenuItem itemEstagio1 = new JMenuItem("Estï¿½gio 1");
-		itemEstagio1.addActionListener(new java.awt.event.ActionListener() {
+		for(int i = 1;i < 5; i++) {
+			menuEstagio.add(configureStageMenu(i));
+		}
+	}
+	
+	private JMenuItem configureStageMenu(final int index) {
+		JMenuItem itemStage = new JMenuItem("Estágio " + index);
+		itemStage.addActionListener(new java.awt.event.ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				Main.level = 1;
+				Main.level = index;
+				setTitle("SCC0604 - Pacman -" + "Estágio selecionado: "+ Main.level);
 			}
 			
 		});
-		menuEstagio.add(itemEstagio1);
-		
-		JMenuItem itemEstagio2 = new JMenuItem("Estï¿½gio 2");
-		itemEstagio2.addActionListener(new java.awt.event.ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				Main.level = 2;
-			}
-			
-		});
-		menuEstagio.add(itemEstagio2);
-		
-		JMenuItem itemEstagio3 = new JMenuItem("Estï¿½gio 3");
-		itemEstagio3.addActionListener(new java.awt.event.ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				Main.level = 3;
-			}
-			
-		});
-		menuEstagio.add(itemEstagio3);
-		
-		JMenuItem itemEstagio4 = new JMenuItem("Estï¿½gio 4");
-		itemEstagio4.addActionListener(new java.awt.event.ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				Main.level = 4;
-			}
-			
-		});
-		menuEstagio.add(itemEstagio4);
-		
-		
-		
+		return itemStage;
 	}
 	
 	private void configureInitialScreen(){
@@ -108,7 +81,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		setSize(sizeWidth, sizeHeight);
 		
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SCC0604 - Pacman"); 
+        setTitle("SCC0604 - Pacman -" + "Estágio selecionado: "+ Main.level); 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(20, 20));
         setResizable(false);		
@@ -148,7 +121,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		startButton.addActionListener(handlerOpen);
 		add(startButton);
 	}
-	*/
+	
 	
 	private void configureComboBox(){
 		box = new JComboBox<String>(levels);
@@ -165,6 +138,7 @@ public class InitialScreen extends javax.swing.JFrame {
 		});
 		add(box);
 	}
+	*/
 
 	public class HandlerStartButton implements ActionListener{
 		public void actionPerformed(ActionEvent ev){

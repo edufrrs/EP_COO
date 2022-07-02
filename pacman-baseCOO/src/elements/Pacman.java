@@ -13,12 +13,17 @@ public class Pacman extends ElementMove implements Serializable  {
     private int numberDotstoEat=0;
     private int numberGhosttoEat=4;
     private long startTimePower=0;
+    private long startTimeInvecibility = 0;
     private int ghostPointMultiplier = 2;
     
     public Pacman(String imageName) {
         super(imageName);
         this.isMortal = true;
         
+    }
+    
+    public void setIsMorta(boolean status) {
+    	this.isMortal = status;
     }
     
     public int getGhostPointMultiplier() {
@@ -56,6 +61,15 @@ public class Pacman extends ElementMove implements Serializable  {
 	
 	
 	public void setStartTimePower(long start){
+		this.startTimePower=start;
+	}
+	
+	public long getStartTimeInvencibility() {
+		return this.startTimePower;
+	}
+	
+	
+	public void setStartTimeInvencibility(long start){
 		this.startTimePower=start;
 	}
 	
