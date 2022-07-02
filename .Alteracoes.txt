@@ -67,8 +67,15 @@ Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os ponto
 		quantos pontos faltam para o pacman ganhar vida)
 	- E no método foi incluido uma linha de comando set que inclui o pointsRemaining da fase anterior na próxima fase
 	- Corrigi um problema que toda vez que passava a fase o número de vidas voltava pra 1, alterei a chamada do restartGame(1,...) pra restarGame(pacman.getLifes() 
+
 10- Printar na tela o ponto que o fantasma deu quando ele morre
 	-Foi criado uma nova classe GhostPointsImage que extende Element
 	-no método que checa quando um fantasma morre, foi adicionada linhas que criam um objeto do tipo(GhostPointsImage)
 		e recebe o nome da imagem(ex:200.png) e cria o desenho do ponto na tela
 	-foi também adicionado um timer para eliminar a imagem depois de certo tempo
+11- Adicionado no título o estágio selecionado
+	- Em Initial gamescreen foi adicionado um print no título para mostrar o estágio selecionado
+	- Em configureStageMenu foi adicionado uma linha para atualizar o título 
+
+12- Pacman agora fica invencível quando perde uma vida
+	- Foi criado uma função para tirar a imortalidade do pacman depois certo tempo passado (checkTimeOfInvencibility)	 

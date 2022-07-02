@@ -33,7 +33,11 @@ public class GameController {
     	
         
     	checkElementColideWall(elements, numberGhost);
-    	checkTimeOfInvencibility(pacman);
+    	
+    	if(!pacman.getIsMortal()){
+    		checkTimeOfInvencibility(pacman);
+    	}
+    	
     	boolean overlapGhostPacman=checkOverlapGhostPacman(elements,pacman, numberGhost);
 
         if(overlapGhostPacman) { 
@@ -41,7 +45,7 @@ public class GameController {
         	if(pacman.getLifes()>0){
         		//Main.gamePacMan.reStartGame(pacman.getLifes());
         		pacman.setStartTimeInvencibility(System.currentTimeMillis());
-        		pacman.setIsMorta(false);
+        		pacman.setIsMortal(false);
         		pacman.setMovDirection(Pacman.STOP);
         	}
         	else{
@@ -85,14 +89,14 @@ public class GameController {
     private void checkTimeOfInvencibility(Pacman pacman) {
     	long elapsed = System.currentTimeMillis() - pacman.getStartTimeInvencibility();
     	if(elapsed >= 1500) {
-    		pacman.setIsMorta(true);
+    		pacman.setIsMortal(true);
     	}
     }
     
 	private boolean checkOverlapGhostPacman(ArrayList<Element> elements, Pacman pacman,int numberGhost) {
         boolean overlapGhostPacman=false;
         for (int i=1;i<=numberGhost;i++){
-        	if(elements.get(i).overlap(pacman) & !elements.get(i).isMortal()){
+        	if(elements.get(i).overlap(pacman) & !elements.get(i).isMortal() & pacman.getIsMortal()){
         		overlapGhostPacman=true;
         	}
         }

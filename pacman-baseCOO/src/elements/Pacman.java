@@ -22,8 +22,12 @@ public class Pacman extends ElementMove implements Serializable  {
         
     }
     
-    public void setIsMorta(boolean status) {
+    public void setIsMortal(boolean status) {
     	this.isMortal = status;
+    }
+    
+    public boolean getIsMortal() {
+    	return this.isMortal;
     }
     
     public int getGhostPointMultiplier() {
