@@ -63,7 +63,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
         	catch(FileNotFoundException e1){
         	 		//System.err.println("Arquivo jogo.ser n�o existente. Iniciando novo jogo ...");
         			JOptionPane.showMessageDialog(null, "Nenhum jogo salvo. Iniciando um novo...");	
-                	this.stage = new Stage(Main.level);
+                	this.stage = new Stage(1);
                 	fillInitialElemArrayFromMatrix(stage.getMatrix());
         	}
         	catch(IOException e1){
@@ -84,9 +84,9 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
     	return pacman;
     }    
     
-    private void fillInitialElemArrayFromMatrix(int [][]matrix) {
+    public void fillInitialElemArrayFromMatrix(int [][]matrix) {
     	
-    	if(Main.level == 1 || Main.level == 2 || Main.level == 3) {
+    	if(this.stage.getId() == 1 || this.stage.getId() == 2 || this.stage.getId() == 3) {
     		pacman = new Pacman("pacman.png");
             pacman.setPosition(1,1);
             pacman.addLife();
@@ -132,7 +132,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
             		}
                 }
             }
-    	} else if (Main.level==4) {
+    	} else if (this.stage.getId()==4) {
     		pacman = new Pacman("pacman.png");
     		pacman.setNumberGhosttoEat5();
             pacman.setPosition(1,1);
@@ -190,9 +190,9 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
     		
     }
 
-	private void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException{
+	public void openSavedGame(String fileName) throws FileNotFoundException,IOException, ClassNotFoundException{
 		try {
-			FileInputStream fluxo = new FileInputStream("jogo.ser");
+			FileInputStream fluxo = new FileInputStream(fileName);
 			ObjectInputStream objarq = new ObjectInputStream(fluxo);
 			
 			this.stage = (Stage) objarq.readObject();
@@ -218,6 +218,14 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
     
     public void removeElement(Element elem) {
         elemArray.remove(elem);
+    }
+    
+    public void setStage(Stage stage) {
+    	this.stage = stage;
+    }
+    
+    public Stage getStage() {
+    	return this.stage;
     }
     
     public void reStartGame(int numberLifes, int numberPoints, int remainingScore){
@@ -341,6 +349,7 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 
+    
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		

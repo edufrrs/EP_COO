@@ -78,4 +78,10 @@ Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os ponto
 	- Em configureStageMenu foi adicionado uma linha para atualizar o título 
 
 12- Pacman agora fica invencível quando perde uma vida
-	- Foi criado uma função para tirar a imortalidade do pacman depois certo tempo passado (checkTimeOfInvencibility)	 
+	- Foi criado uma função para tirar a imortalidade do pacman depois certo tempo passado (checkTimeOfInvencibility)
+
+13 - Classe de Teste
+	- Criada para GameScreen com 3 metodos 
+		- Teste de criação das fases
+		- Teste de load
+		- Teste do metodo restart	 
