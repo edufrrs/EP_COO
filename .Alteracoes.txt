@@ -84,4 +84,8 @@ Quando o Pacman come dois ou mais fantasmas de uma vez só, contabiliza os ponto
 	- Criada para GameScreen com 3 metodos 
 		- Teste de criação das fases
 		- Teste de load
-		- Teste do metodo restart	 
+		- Teste do metodo restart
+
+14 - Hierarquia
+	- isMortal é um atributo declarado em Element, mas os métodos getIsMortal() e set isMortal() foram feitos na
+		classe Pacman (apenas). Foram movidos para Element.		 

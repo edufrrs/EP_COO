@@ -22,13 +22,6 @@ public class Pacman extends ElementMove implements Serializable  {
         
     }
     
-    public void setIsMortal(boolean status) {
-    	this.isMortal = status;
-    }
-    
-    public boolean getIsMortal() {
-    	return this.isMortal;
-    }
     
     public int getGhostPointMultiplier() {
     	return this.ghostPointMultiplier;
@@ -89,9 +82,6 @@ public class Pacman extends ElementMove implements Serializable  {
 		this.numberLifes++;
 	}
 	
-
-	
-	
 	public void addNumberDotstoEat() {
 		this.numberDotstoEat++;
 	}
@@ -119,6 +109,8 @@ public class Pacman extends ElementMove implements Serializable  {
 		return numberGhosttoEat;
 	}
 	
+	/*Método feito para ajustar esse atributo quando 
+	  o nível 4 for criado e evitar erros*/
 	public void setNumberGhosttoEat5() {
 		this.numberGhosttoEat = 5;
 	}

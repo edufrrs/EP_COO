@@ -72,6 +72,8 @@ public abstract class ElementMove extends Element implements Serializable {
     public boolean moveLeft() {
         return this.pos.moveLeft();
     }
+    
+    
 
 
 }
