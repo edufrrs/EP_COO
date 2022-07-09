@@ -13,6 +13,9 @@ import utils.Stage;
 public class TesteGameScreen {
 
 	@Test
+	/*
+	 *Verifica, para todos os níveis, se logo após a criação 
+	 *o valor das variáveis do jogo estão corretas*/
 	public void testStage() {
 		
 		for(int i=1;i<=4;i++) {
@@ -43,6 +46,10 @@ public class TesteGameScreen {
 			
 	}
 	
+	/*
+	 * Verifica se os valores das variáveis permanecem iguais
+	 * aos do momento em que um jogo foi salvo 
+	 */
 	@Test
 	public void testLoad() throws FileNotFoundException, ClassNotFoundException, IOException {
 		
@@ -50,13 +57,16 @@ public class TesteGameScreen {
 		screen.openSavedGame("saveTest.ser");
 		
 		assertEquals(4,screen.getStage().getId());
-		assertEquals(1,screen.getPacman().getLifes());
-		assertEquals(2020,screen.getPacman().getScore());
-		assertEquals(177,screen.getPacman().getNumberDotstoEat());
+		assertEquals(2,screen.getPacman().getLifes());
+		assertEquals(1940,screen.getPacman().getScore());
+		assertEquals(185,screen.getPacman().getNumberDotstoEat());
 		assertEquals(2,screen.getPacman().getNumberGhosttoEat());
 		
 	}
 	
+	/*
+	 * Verifica se o valor das variáveis estão corretas após chamar o método reStartGame() 
+	 */
 	@Test 
 	public void testRestartGame() throws FileNotFoundException, ClassNotFoundException, IOException {
 		GameScreen screen = new GameScreen();
@@ -67,7 +77,7 @@ public class TesteGameScreen {
 		assertEquals(2,screen.getPacman().getLifes());
 		assertEquals(0,screen.getPacman().getScore());
 		assertEquals(242,screen.getPacman().getNumberDotstoEat());
-		assertEquals(4,screen.getPacman().getNumberGhosttoEat());
+		assertEquals(4,screen.getPacman().getNumberGhosttoEat());		
 		
 	}
 

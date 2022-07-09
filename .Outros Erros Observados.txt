@@ -1,1 +1,0 @@
-- Score reseta quando passa de fase

@@ -61,7 +61,6 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
         		openSavedGame(fileName);
         	}
         	catch(FileNotFoundException e1){
-        	 		//System.err.println("Arquivo jogo.ser nï¿½o existente. Iniciando novo jogo ...");
         			JOptionPane.showMessageDialog(null, "Nenhum jogo salvo. Iniciando um novo...");	
                 	this.stage = new Stage(1);
                 	fillInitialElemArrayFromMatrix(stage.getMatrix());
@@ -84,6 +83,8 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
     	return pacman;
     }    
     
+    //Esse método foi adaptado para verificar quando precisa criar o nível 4
+    //Nesse caso, um fantasma a mais é criado e o atributo numberGhosttoEat ajustado
     public void fillInitialElemArrayFromMatrix(int [][]matrix) {
     	
     	if(this.stage.getId() == 1 || this.stage.getId() == 2 || this.stage.getId() == 3) {
@@ -196,10 +197,8 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
 			ObjectInputStream objarq = new ObjectInputStream(fluxo);
 			
 			this.stage = (Stage) objarq.readObject();
-			//System.out.println(stage.id);
 			this.elemArray = (ArrayList) objarq.readObject();
 			this.pacman = (Pacman) objarq.readObject();
-			//System.out.println(pacman.getRemainingScore());
         	
 			objarq.close();
 		 }
@@ -315,7 +314,6 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener, Seria
    			System.out.println(ioExc.getMessage());
    			ioExc.printStackTrace();
    		}
-    	//System.out.println("Falta implementar");
  	}
 
 	/**
